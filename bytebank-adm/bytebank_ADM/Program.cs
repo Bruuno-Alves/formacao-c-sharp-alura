@@ -7,27 +7,58 @@ namespace bytebank_ADM
     {
         static void Main(string[] args)
         {
-            Funcionario bruno = new();
-            bruno.Nome = "Bruno Alves";
-            bruno.Cpf = "456987123-5";
-            bruno.Salario = 3000;
+            #region
+            //Funcionario bruno = new("456987123-5", 3000);
+            //bruno.Nome = "Bruno Alves";
 
-            Console.WriteLine(bruno.Nome);
-            Console.WriteLine(bruno.GetBonificacao());
+            //Console.WriteLine(bruno.Nome);
+            //Console.WriteLine(bruno.GetBonificacao());
 
-            Diretor rebecca = new();
-            rebecca.Nome = "Rebecca Faria";
-            rebecca.Cpf = "569445853-9";
-            rebecca.Salario = 8000;
+            //Diretor rebecca = new("569445853-9", 8000);
+            //rebecca.Nome = "Rebecca Faria";
 
-            Console.WriteLine(rebecca.Nome);
-            Console.WriteLine(rebecca.GetBonificacao());
+            //Console.WriteLine(rebecca.Nome);
+            //Console.WriteLine(rebecca.GetBonificacao());
 
-            GerenciadorDeBonificacao gerenciador = new();
-            gerenciador.Registrar(bruno);
-            gerenciador.Registrar(rebecca);
+            //GerenciadorDeBonificacao gerenciador = new();
+            //gerenciador.Registrar(bruno);
+            //gerenciador.Registrar(rebecca);
 
-            Console.WriteLine($"O total de bonificações é: {gerenciador.Bonificacoes}");
+            //Console.WriteLine($"O total de bonificações é: {gerenciador.Bonificacoes}.");
+            //Console.WriteLine($"O total de funcionários criados é: {Funcionario.TotalDeFuncionarios}.");
+
+            //bruno.AumentarSalario();
+            //rebecca.AumentarSalario();
+
+            //Console.WriteLine($"Novo salário do Bruno é: {bruno.Salario}.");
+            //Console.WriteLine($"Novo salário da Rebecca é: {rebecca.Salario}.");
+            #endregion
+
+            CalcularBonificacao();
+
+            void CalcularBonificacao()
+            {
+                GerenciadorDeBonificacao gerenciador = new();
+
+                Designer ulisses = new("456852369-7");
+                ulisses.Nome = "Ulisses Almeida";
+
+                Diretor paula = new("715996258-2");
+                paula.Nome = "Paula Rambolli";
+
+                Auxiliar igor = new("636885123-5");
+                igor.Nome = "Igor Vasconcelos";
+
+                GerenteDeContas camila = new("852123789 - 5");
+                camila.Nome = "Camila Milanesi";
+
+                gerenciador.Registrar(ulisses);
+                gerenciador.Registrar(paula);
+                gerenciador.Registrar(igor);
+                gerenciador.Registrar(camila);
+
+                Console.WriteLine($"O total de bonificações é {gerenciador.Bonificacoes}.");
+            }
 
         }
     }
