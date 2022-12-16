@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace bytebank_ADM.Utilitario
 {
-    internal class GerenciadorDeBonificacao
+    public class GerenciadorDeBonificacao
     {
         public double Bonificacoes { get; private set; }
 

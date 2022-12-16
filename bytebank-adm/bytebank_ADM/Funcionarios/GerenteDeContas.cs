@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace bytebank_ADM.Funcionarios
 {
-    internal class GerenteDeContas : Funcionario
+    public class GerenteDeContas : Funcionario
     {
         public GerenteDeContas(string cpf) : base(cpf, 4000)
         {
@@ -21,6 +21,13 @@ namespace bytebank_ADM.Funcionarios
         public override void AumentarSalario()
         {
             this.Salario *= 1.05;
+        }
+
+        public string Senha { get; set; }
+
+        public bool Autenticar(string senha)
+        {
+            return this.Senha == senha;
         }
     }
 }
