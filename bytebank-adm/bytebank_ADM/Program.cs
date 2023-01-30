@@ -1,4 +1,5 @@
 ﻿using bytebank_ADM.Funcionarios;
+using bytebank_ADM.Parceria;
 using bytebank_ADM.SistemaInterno;
 using bytebank_ADM.Utilitario;
 
@@ -74,8 +75,12 @@ namespace bytebank_ADM
                 nataly.Nome = "Nataly Vieira";
                 nataly.Senha = "885";
 
+                ParceiroComercial caio = new();
+                caio.Senha = "555";
+
                 sistema.Logar(ingrid, "123");
                 sistema.Logar(nataly, "552");
+                sistema.Logar(caio, "555");
 
             }
 
